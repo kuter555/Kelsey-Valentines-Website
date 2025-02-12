@@ -88,6 +88,10 @@ body {
     object-fit: cover;
 }
 
+.nco-banner{
+    display: none !important;
+}
+
 .row {
     display: flex;
     flex-wrap: nowrap;
