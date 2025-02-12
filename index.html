@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I looove you Kelsey!</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+    <script>
+
+        let images = ["src/image1.jpg", "src/image2.jpg", "src/image3.jpg", "src/image4.jpg"];
+        let currentIndex = 0;
+        
+        function preloadImages() {
+            images.forEach((src) => {
+                let img = new Image();
+                img.src = src;
+            });
+        }
+        
+        function cycleImages() {
+            let bgGallery = document.getElementById("background-gallery").children;
+            bgGallery[currentIndex].style.opacity = 0;
+            currentIndex = (currentIndex + 1) % images.length;
+            bgGallery[currentIndex].style.opacity = 1;
+        }
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            let bgGallery = document.getElementById("background-gallery");
+            images.forEach((src, index) => {
+                let img = document.createElement("img");
+                img.src = src;
+                if (index === 0) img.style.opacity = 1;
+                bgGallery.appendChild(img);
+            });
+            setInterval(cycleImages, 5000);
+        });
+        
+
+
+
+
+
+
+
+
+        let messages = [
+            "I have an important question to ask you...",
+            "As I'm sure you're aware, you and I have been boyfriend and girlfriend for a long time",
+            "And on top of that an incredibly special date is coming up",
+            "(it's literally right around the corner)",
+            "So Kelsey Elizabeth Moriarty, love of my life",
+            "Literally the most dream girl I could ever think of",
+            "The prettiest, most beautiful, and amazing person I've met",
+            "Will YOU be my valentine?"
+        ];
+
+        let buttons = [
+            "Ooh what is it!",
+            "Where could this be going?!",
+            "Wait I think I know what this could be...",
+            "okay",
+            "Omg!!!",
+            "I love you too so much",
+            "Omg get on with it",
+        ]
+
+
+
+        let msg_index = 0;
+        let btn_index = 0;
+
+        function changeTextOnHover(button) {
+            button.textContent = "Yes!";
+        }
+        
+        function resetText(button) {
+            button.textContent = "No";
+        }
+
+
+        function changeMessage() {
+            let messageElement = document.getElementById("message");
+            let buttonContainer = document.getElementById("button-container");
+            let nextButton = document.getElementById("next-button");
+            let main_content = document.getElementById("content")
+
+            msg_index++;
+            btn_index++;
+            if (msg_index < messages.length - 1) {
+                messageElement.textContent = messages[msg_index];
+                nextButton.textContent = buttons[btn_index]
+            } else if (msg_index === messages.length - 1) {
+                messageElement.textContent = messages[msg_index];
+                buttonContainer.innerHTML = '<button class="yes-button" onclick="changeMessage()">Yes</button> <button class="hover-button" onclick="changeMessage()" onmouseover="changeTextOnHover(this)" onmouseout="resetText(this)">No</button>';
+            }
+            else if (msg_index === messages.length){
+                main_content.innerHTML = '<center><h2>Yay!</h2><iframe width="640" height="360" src="https://www.youtube.com/embed/nzE8eUlseRM" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen></iframe></center><a href="mailto:ch.wahlen01@gmail.com"><button>send confirmation <3</button><//a>'
+            }
+            
+        }    
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
+
+</head>
+<body>
+    <div class="gallery">
+        <div class="row">
+            <img src="src/photo_1.jpeg" alt="Image 1">
+            <img src="src/photo_2.JPG" alt="Image 2">
+            <img src="src/photo_3.jpg" alt="Image 4">
+            <img src="src/photo_4.JPG" alt="Image 5">
+            <img src="src/photo_5.JPG" alt="Image 6">
+            <img src="src/photo_6.JPG" alt="Image 7">
+            <img src="src/photo_7.JPG" alt="Image 8">
+            <img src="src/photo_8.JPG" alt="Image 9">
+            <img src="src/photo_9.JPG" alt="Image 9">
+            <img src="src/photo_10.JPG" alt="Image 9">
+            <img src="src/photo_11.JPG" alt="Image 1">
+            <img src="src/photo_12.JPG" alt="Image 2">
+            <img src="src/photo_13.jpg" alt="Image 4">
+            <img src="src/photo_14.JPG" alt="Image 5">
+            <img src="src/photo_15.JPG" alt="Image 6">
+            <img src="src/photo_16.JPG" alt="Image 7">
+            <img src="src/photo_17.JPG" alt="Image 8">
+            <img src="src/photo_18.JPG" alt="Image 9">
+            <img src="src/photo_19.JPG" alt="Image 9">
+            <img src="src/photo_20.JPG" alt="Image20">
+            <img src="src/photo_21.JPG" alt="Image21">
+        </div>
+        <div class="row">
+            <img src="src/photo_1.jpeg" alt="Image 1">
+            <img src="src/photo_2.JPG" alt="Image 2">
+            <img src="src/photo_3.jpg" alt="Image 4">
+            <img src="src/photo_4.JPG" alt="Image 5">
+            <img src="src/photo_5.JPG" alt="Image 6">
+            <img src="src/photo_6.JPG" alt="Image 7">
+            <img src="src/photo_7.JPG" alt="Image 8">
+            <img src="src/photo_8.JPG" alt="Image 9">
+            <img src="src/photo_9.JPG" alt="Image 9">
+            <img src="src/photo_10.JPG" alt="Image 9">
+            <img src="src/photo_11.JPG" alt="Image 1">
+            <img src="src/photo_12.JPG" alt="Image 2">
+            <img src="src/photo_13.jpg" alt="Image 4">
+            <img src="src/photo_14.JPG" alt="Image 5">
+            <img src="src/photo_15.JPG" alt="Image 6">
+            <img src="src/photo_16.JPG" alt="Image 7">
+            <img src="src/photo_17.JPG" alt="Image 8">
+            <img src="src/photo_18.JPG" alt="Image 9">
+            <img src="src/photo_19.JPG" alt="Image 9">
+            <img src="src/photo_20.JPG" alt="Image20">
+            <img src="src/photo_21.JPG" alt="Image21">
+        </div>
+        <div class="row">
+            <img src="src/photo_1.jpeg" alt="Image 1">
+            <img src="src/photo_2.JPG" alt="Image 2">
+            <img src="src/photo_3.jpg" alt="Image 4">
+            <img src="src/photo_4.JPG" alt="Image 5">
+            <img src="src/photo_5.JPG" alt="Image 6">
+            <img src="src/photo_6.JPG" alt="Image 7">
+            <img src="src/photo_7.JPG" alt="Image 8">
+            <img src="src/photo_8.JPG" alt="Image 9">
+            <img src="src/photo_9.JPG" alt="Image 9">
+            <img src="src/photo_10.JPG" alt="Image 9">
+            <img src="src/photo_11.JPG" alt="Image 1">
+            <img src="src/photo_12.JPG" alt="Image 2">
+            <img src="src/photo_13.jpg" alt="Image 4">
+            <img src="src/photo_14.JPG" alt="Image 5">
+            <img src="src/photo_15.JPG" alt="Image 6">
+            <img src="src/photo_16.JPG" alt="Image 7">
+            <img src="src/photo_17.JPG" alt="Image 8">
+            <img src="src/photo_18.JPG" alt="Image 9">
+            <img src="src/photo_19.JPG" alt="Image 9">
+            <img src="src/photo_20.JPG" alt="Image20">
+            <img src="src/photo_21.JPG" alt="Image21">
+        </div>
+        <div class="row">
+            <img src="src/photo_1.jpeg" alt="Image 1">
+            <img src="src/photo_2.JPG" alt="Image 2">
+            <img src="src/photo_3.jpg" alt="Image 4">
+            <img src="src/photo_4.JPG" alt="Image 5">
+            <img src="src/photo_5.JPG" alt="Image 6">
+            <img src="src/photo_6.JPG" alt="Image 7">
+            <img src="src/photo_7.JPG" alt="Image 8">
+            <img src="src/photo_8.JPG" alt="Image 9">
+            <img src="src/photo_9.JPG" alt="Image 9">
+            <img src="src/photo_10.JPG" alt="Image 9">
+            <img src="src/photo_11.JPG" alt="Image 1">
+            <img src="src/photo_12.JPG" alt="Image 2">
+            <img src="src/photo_13.jpg" alt="Image 4">
+            <img src="src/photo_14.JPG" alt="Image 5">
+            <img src="src/photo_15.JPG" alt="Image 6">
+            <img src="src/photo_16.JPG" alt="Image 7">
+            <img src="src/photo_17.JPG" alt="Image 8">
+            <img src="src/photo_18.JPG" alt="Image 9">
+            <img src="src/photo_19.JPG" alt="Image 9">
+            <img src="src/photo_20.JPG" alt="Image20">
+            <img src="src/photo_21.JPG" alt="Image21">
+        </div>
+        <div class="row">
+            <img src="src/photo_1.jpeg" alt="Image 1">
+            <img src="src/photo_2.JPG" alt="Image 2">
+            <img src="src/photo_3.jpg" alt="Image 4">
+            <img src="src/photo_4.JPG" alt="Image 5">
+            <img src="src/photo_5.JPG" alt="Image 6">
+            <img src="src/photo_6.JPG" alt="Image 7">
+            <img src="src/photo_7.JPG" alt="Image 8">
+            <img src="src/photo_8.JPG" alt="Image 9">
+            <img src="src/photo_9.JPG" alt="Image 9">
+            <img src="src/photo_10.JPG" alt="Image 9">
+            <img src="src/photo_11.JPG" alt="Image 1">
+            <img src="src/photo_12.JPG" alt="Image 2">
+            <img src="src/photo_13.jpg" alt="Image 4">
+            <img src="src/photo_14.JPG" alt="Image 5">
+            <img src="src/photo_15.JPG" alt="Image 6">
+            <img src="src/photo_16.JPG" alt="Image 7">
+            <img src="src/photo_17.JPG" alt="Image 8">
+            <img src="src/photo_18.JPG" alt="Image 9">
+            <img src="src/photo_19.JPG" alt="Image 9">
+            <img src="src/photo_20.JPG" alt="Image20">
+            <img src="src/photo_21.JPG" alt="Image21">
+        </div>
+    </div>
+
+
+
+    <div class="card">
+        <div class="content" id="content">
+            <div class="text">
+                <p style="font-size: 5.1rem; font-weight: bold">Dear Kelsey...</p>
+                <p id="message" style="font-size: 3.6rem;"></p>
+            </div>
+            <div id="button-container">
+                <button id="next-button" onclick="changeMessage()">Next!</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
