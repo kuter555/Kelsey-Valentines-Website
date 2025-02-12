@@ -91,6 +91,9 @@ body {
 .nco-banner{
     display: none !important;
 }
+html body .nco-banner {
+    display: none !important;
+}
 
 .row {
     display: flex;
